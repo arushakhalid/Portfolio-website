@@ -565,5 +565,3 @@ body {
   .cards, .projects .project-grid { grid-template-columns: 1fr; }
   .site-nav { display: none; }
 }
-
-
