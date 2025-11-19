@@ -1,19 +1,23 @@
-node_modules/
-
-# environment files
+############################
+# Environment / secrets
+############################
 .env
 .env.*
 
-# logs
+############################
+# Node & dependencies
+############################
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
 
-# OS / editor
+############################
+# OS / editor files
+############################
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 *.swp
-
-

@@ -117,3 +117,57 @@
     }, 1000);
   });
 })();
+
+// Typing animation for hero roles
+(function () {
+  const roles = [
+    "Web Developer",
+    "WordPress Expert",
+    "Webflow Expert",
+    "Digital Creator"
+  ];
+
+  let currentRoleIndex = 0;
+  let currentCharIndex = 0;
+  let isDeleting = false;
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const pauseTime = 2000;
+
+  function typeRole() {
+    const typingElement = document.getElementById('typingText');
+    if (!typingElement) return;
+
+    const currentRole = roles[currentRoleIndex];
+    
+    if (isDeleting) {
+      typingElement.textContent = currentRole.substring(0, currentCharIndex - 1);
+      currentCharIndex--;
+      
+      if (currentCharIndex === 0) {
+        isDeleting = false;
+        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+        setTimeout(typeRole, 500);
+        return;
+      }
+      
+      setTimeout(typeRole, deletingSpeed);
+    } else {
+      typingElement.textContent = currentRole.substring(0, currentCharIndex + 1);
+      currentCharIndex++;
+      
+      if (currentCharIndex === currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeRole, pauseTime);
+        return;
+      }
+      
+      setTimeout(typeRole, typingSpeed);
+    }
+  }
+
+  // Start typing animation when page loads
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(typeRole, 1000);
+  });
+})();
