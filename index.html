@@ -243,12 +243,27 @@
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="section contact parallax" data-parallax-speed="0.3" aria-label="Contact">
+      <section id="contact" class=" section contact parallax" data-parallax-speed="0.3" aria-label="Contact">
         <div class="container contact-inner">
           <div class="contact-content">
             <h2>Let's build something great</h2>
             <p>I'm available for freelance and collaborations in Lahore and remote.</p>
-            <form class="contact-form" id="contactForm" novalidate>
+            <form
+              id="contactForm"
+              class="contact-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <!-- Web3Forms access key (public) -->
+              <input type="hidden" name="access_key" value="b28d91cb-1f09-47fe-aaca-b95942c14f01" />
+
+              <!-- Optional: subject line shown in your inbox -->
+              <!-- <input type="hidden" name="subject" value="New message from your portfolio website" /> -->
+
+
+              <!-- Honeypot field (prevents spam bots) -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required aria-required="true" />
@@ -268,7 +283,7 @@
               <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
             <div class="contact-links">
-              <a href="mailto:hello@aru.sha" class="contact-link" rel="nofollow">hello@aru.sha</a>
+              <a href="mailto:arushaakhalid@gmail.com" class="contact-link" rel="nofollow">arushaakhalid@gmail.com</a>
               <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener" class="contact-link">LinkedIn</a>
               <a href="https://github.com/" target="_blank" rel="noreferrer noopener" class="contact-link">GitHub</a>
             </div>

@@ -79,10 +79,7 @@
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    
+
     // Basic validation
     const name = form.querySelector('#name').value.trim();
     const email = form.querySelector('#email').value.trim();
@@ -100,21 +97,16 @@
       alert('Please enter a valid email address.');
       return;
     }
-    
-    // Here you would typically send the data to a server
-    // For now, we'll just show a success message
+
+    // Show quick feedback, then submit to Web3Forms
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Thank you for your message! I\'ll get back to you soon.');
-      form.reset();
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }, 1000);
+    if (submitBtn) {
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+    }
+
+    // Let the browser submit the form normally to Web3Forms
+    form.submit();
   });
 })();
 

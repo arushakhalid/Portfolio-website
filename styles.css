@@ -486,7 +486,12 @@ body {
     color-mix(in srgb, var(--bg) 70%, var(--beige-700) 30%) 0%,
     color-mix(in srgb, var(--bg) 50%, var(--beige-200) 50%) 100%);
 }
-.section-overlay { position: absolute; inset: 0; background: color-mix(in srgb, var(--bg) 48%, transparent); }
+.section-overlay {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--bg) 48%, transparent);
+  pointer-events: none;
+}
 
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); position: relative; }
 .card {
